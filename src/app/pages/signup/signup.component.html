@@ -6,22 +6,31 @@
                     <img src="../../../assets/add-user.png" alt="icon user registrer" width="100" height="100">
                 </div>
                 <h1 class="text-center">Regístrate Aquí</h1>
-                <form action="">
-                    <mat-form-field class="full-width" appearence="outline">
-                        <mat-label>Nombre de usuario: </mat-label>
-                        <input matInput placeholder="Digite su nombre de usuario: ">
+                <form (ngSubmit)="formSubmit()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Nombre de usuario</mat-label>
+                        <input required [(ngModel)]="user.username" matInput name="username" placeholder="Ingrese su nombre de usuario">
+                        <mat-hint>El nombre de usuario debe ser único</mat-hint>
                     </mat-form-field>
-                    <mat-form-field class="full-width" appearence="outline">
-                        <mat-label>Nombre de usuario: </mat-label>
-                        <input matInput placeholder="Digite su nombre de usuario: ">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input required [(ngModel)]="user.password" type="password" matInput name="password" placeholder="Ingrese su contraseña ">
                     </mat-form-field>
-                    <mat-form-field class="full-width" appearence="outline">
-                        <mat-label>Nombre de usuario: </mat-label>
-                        <input matInput placeholder="Digite su nombre de usuario: ">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input required [(ngModel)]="user.name" matInput name="name" placeholder="Ingrese su nombre">
                     </mat-form-field>
-                    <mat-form-field class="full-width" appearence="outline">
-                        <mat-label>Nombre de usuario: </mat-label>
-                        <input matInput placeholder="Digite su nombre de usuario: ">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input required [(ngModel)]="user.lastname" matInput name="lastname" placeholder="Ingrese su apellido">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input required [(ngModel)]="user.email" matInput name="email" placeholder="Ingrese su email">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Telefono</mat-label>
+                        <input required [(ngModel)]="user.phone" matInput name="phone" placeholder="Ingrese su telefono">
                     </mat-form-field>
 
                     <div class="container text-center">
@@ -30,6 +39,7 @@
                     </div>
 
                 </form>
+                <br><br><br>
             </div>
         </div>
     </div>
