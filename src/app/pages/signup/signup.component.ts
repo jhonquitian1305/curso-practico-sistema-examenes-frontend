@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -40,7 +41,7 @@ export class SignupComponent implements OnInit {
     this.userService.addUser(this.user).subscribe({
       next: (data) => {
         console.log(data);
-        alert('Usuario guardado con éxito');
+        Swal.fire('Usuario guardado', 'Usuario registrado con éxito en el sistema', 'success');
       },
       error: (err) => {
         this.snack.open(`Ha ocurrido un error en el sistema`, 'Aceptar', {
